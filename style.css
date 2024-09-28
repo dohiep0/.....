@@ -1,0 +1,72 @@
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background:#ffc0cb;
+}
+
+.love-loading{
+    position:relative;
+    padding:60px 20px;
+    color:#fff;
+    border:2px solid rgb(255,124,146);
+    border-radius: 100px;
+    box-shadow: 1px 1px 50px 5px #fff;
+    width:30%;
+    overflow:hidden;
+    background:#ffe7e7;
+}
+.love-loading h3{
+    position:absolute;
+    top:25%;
+    left:50%;
+    font-size: 30px;
+    transform:translate(-50%, -50%);
+    width:100%;
+    text-align: center;
+    opacity:0;
+    animation:loadingText 1s forwards;
+    animation-delay: 5s;
+}
+
+.love-loading h3 i{
+    animation: heart 1s infinite alternate;
+}
+
+.love-loading::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color: rgb(255,117,140);
+    top:0;
+    left:0;
+    animation:loveLoading 5s linear;
+}
+
+@keyframes loveLoading{
+    from{
+        width:0;
+    }
+    to{
+        width:100%;
+    }
+}
+
+@keyframes loadingText{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes heart{
+    from{
+        transform: scale(0.8);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}
